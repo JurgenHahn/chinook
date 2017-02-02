@@ -36,7 +36,7 @@ Track.where(media_type_id: "1").where(unit_price: "0.99E0") #.limit(1).first
 
 
 # 4) Find the 2 oldest artists.
-Artist.order(created_at: :asc).limit(2)
+Artist.order(:created_at).limit(2)
 
 
 
@@ -44,3 +44,4 @@ Artist.order(created_at: :asc).limit(2)
 
 
 # 1) Find all the albums whose titles start with B.
+Album.where("title ILIKE ?", 'B%')
